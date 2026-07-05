@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Greno</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="app">
+
+<nav class="navbar">
+
+<div class="logo">
+<span class="logo-icon">♻</span>
+<span>Greno</span>
+</div>
+
+<div class="nav-links">
+
+<button
+id="nav-home"
+class="nav-btn active"
+onclick="showPage('home')">
+
+Home
+
+</button>
+
+<button
+id="nav-upload"
+class="nav-btn"
+onclick="showPage('upload')">
+
+Scan
+
+</button>
+
+</div>
+
+</nav>
+
+
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Know Before
+<br>
+You Throw
+
+</h1>
+
+<p>
+
+Classify waste using AI and learn the correct disposal method in seconds.
+
+</p>
+
+<button
+class="primary-btn"
+onclick="showPage('upload')">
+
+Get Started
+
+</button>
+
+</div>
+
+
+
+<div class="hero-art">
+
+<div class="circle"></div>
+
+<div class="bin">
+
+<div class="item bottle"></div>
+
+<div class="item box"></div>
+
+<div class="item can"></div>
+
+<div class="recycle">♻</div>
+
+</div>
+
+<div class="leaf leaf-one"></div>
+<div class="leaf leaf-two"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="upload" class="page">
+
+<div class="center">
+
+<h2>Scan Waste</h2>
+
+<p class="sub">
+
+Take a photo or upload an image of the waste item.
+
+</p>
+
+
+
+<label class="drop-area" for="imageInput">
+
+<div class="camera-icon">📷</div>
+
+<h3>Take Photo</h3>
+
+<p>or drag and drop an image here</p>
+
+</label>
+
+
+
+<div class="divider">
+
+<span></span>
+
+<p>or</p>
+
+<span></span>
+
+</div>
+
+
+
+<label
+class="outline-btn full"
+for="imageInput">
+
+Upload Image
+
+</label>
+
+
+
+<input
+id="imageInput"
+type="file"
+accept="image/*"
+capture="environment"
+hidden>
+
+
+
+<p class="small">
+
+Supported formats:
+JPG,
+PNG,
+WebP
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="result" class="page">
+
+<div class="result-grid">
+
+<div class="preview-card">
+
+<img
+id="previewImage"
+src=""
+alt="Prediction">
+
+</div>
+
+
+
+<div class="result-info">
+
+<h2 id="resultTitle">
+
+Waiting...
+
+</h2>
+
+
+
+<p class="label">
+
+Category
+
+</p>
+
+
+
+<span
+id="resultCategory"
+class="chip">
+
+--
+
+</span>
+
+
+
+<p class="label">
+
+Dispose in
+
+</p>
+
+
+
+<div class="info-card">
+
+<div class="trash">
+
+🗑
+
+</div>
+
+<div>
+
+<h4 id="binTitle">
+
+Waiting...
+
+</h4>
+
+<p id="binText">
+
+Upload an image first.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="actions">
+
+<button
+class="primary-btn"
+onclick="showPage('upload')">
+
+Scan Another
+
+</button>
+
+<button
+class="outline-btn"
+onclick="showPage('home')">
+
+Back Home
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
